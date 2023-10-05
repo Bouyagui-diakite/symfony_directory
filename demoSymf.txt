@@ -1,0 +1,17 @@
+comment integrer du css dans son projet symfony:
+
+1- Installer le bundle webpack-enore
+2- Installer le framework css tailwind:
+- on install tailwindcss avec la commande: npm install -D tailwindcss postcss autoprefixer
+-ensuite on genere le fichier de config de postCSS et celui de tailwind ave la commande: npx tailwindcss init
+-ensuite on a les 3 ligne suivantes a notre fichier style.css:
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+et pour que les lignes puissent etre interprete en css on active le enablePostCssLoader dans le fichier webpack
+mais pour que cela puisse marcher on doit installer le css post loader avec la commande:
+npm install postcss-loader@^7.0.0 --save-dev
+
+-faire un npm run dev pour faire apparaitre le dossier build
+pour la gestion des formulaires il faut rajouter le plugin tailwind require('@tailwindcss/forms') dans le fichier de configuration tailwind.config.js
